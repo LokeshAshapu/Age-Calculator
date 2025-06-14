@@ -5,37 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="script.js"></script>
     <title>Age Calculator</title>
 </head>
 
-<body class="bg-gray-100 flex items-center justify-center h-screen">
-    <form action="">
-    <div class="w-100 border border-gray-300 rounded-md bg-white p-5 h-80">
-        <h1 class="flex items-center justify-center text-2xl p-2 text-green-600 font-semibold">Age Calculator</h1>
-        <div class="flex flex-col items-start my-2">
-            <label for="inputDob" class="text-gray-700">
-                Enter your Date of Birth:
-            </label>
-            <input id="inputDob" type="date" class="w-[90%] border border-gray-300
+<body class="bg-blue-50 flex items-center justify-center h-screen">
+    <form class="flex flex-col items-center justify-center w-full max-w-md mx-auto ">
+        <div class="border border-transparent rounded-md bg-white p-5 h-90 shadow-lg  items-center w-[110%]">
+            <h1 class="flex items-center justify-center text-2xl p-2 text-green-600 font-bold">Age Calculator</h1>
+            <div class="flex flex-col items-start my-2 justify-between pt-2">
+                <label for="inputDob" class="text-gray-700 items-start">
+                    Enter your Date of Birth:
+                </label>
+                <input id="inputDobTo" type="date" class="w-[90%] border border-gray-300
                         rounded-md p-1
                         focus:outline-none
                         focus:border-blue-500">
-        </div>
-        <div class="flex flex-col  items-start my-2">
-            <label for="inputDob" class="text-gray-700">
-                Current Date:
-            </label>
-            <input id="inputDob" type="date" class="w-[90%] border border-gray-300
+            </div>
+            <div class="flex flex-col items-start my-2 justify-between">
+                <label for="inputDob" class="text-gray-700 items-start">
+                    Current Date:
+                </label>
+                <input id="inputDobThen" type="date" class="w-[90%] border border-gray-300
                         rounded-md p-1
                         focus:outline-none
                         focus:border-blue-500">
+            </div>
+            <div class="flex flex-nowrap gap-55 items-center justify-center">
+                <input type="submit" value="calculate"
+                    class="m-2 w-20  bg-sky-500 border border-gray-300 rounded cursor-pointer text-white text-xl" onclick="calculateAge(event)">
+                <input type="reset" value="clear"
+                    class="m-2 mr-5 w-20 bg-gray-500 border border-gray-700 rounded cursor-pointer text-white text-xl">
+            </div>
+            <p id="calcutedage" class="text-lg flex items-center justify-center mt-6">Your age is 0 years 0 months 0 days</p>
         </div>
-        <div class="flex flex-nowrap justify-between">
-            <input type="submit" value="calculate" class="m-2 w-20  bg-sky-500 border border-gray-300 rounded cursor-pointer text-white text-xl">
-            <input type="reset" value="clear" class="m-2 w-20 bg-gray-500 border border-gray-700 rounded cursor-pointer text-white text-xl">
-        </div>
-        <p id="calcutedage" class="text-md">your age is 0 years 0 months 28 days</p>
-    </div>
     </form>
 
 </body>
